@@ -52,3 +52,11 @@
 ![image](https://user-images.githubusercontent.com/54719289/115593724-c5c54500-a2cc-11eb-98c7-34bf260b8299.png)
 
 
+#  eksctl scale nodegroup --cluster=EKS-cluster --nodes=5 --name=ng-1
+
+![image](https://user-images.githubusercontent.com/54719289/115597438-2d7d8f00-a2d1-11eb-98ff-ea0daf0bc6c8.png)
+
+
+
+
+
