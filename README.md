@@ -81,6 +81,9 @@
 eksctl delete nodegroup --config-file=clustercreation.yml --include='ng-mixed' --approve
 
 
+![image](https://user-images.githubusercontent.com/54719289/115602515-f1e5c380-a2d6-11eb-8ef6-d083d7b2bbdb.png)
+
+
 
 
 
