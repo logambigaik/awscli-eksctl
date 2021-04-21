@@ -1,7 +1,7 @@
 # awscli-eksctl
 
-      install kubectl and eksctl and environment variable setup for eksctl & kubectl
-      check if eksctl & kubectl installed properly using below command,
+      install kubectl & eksctl and do the environment variable setup
+      check if eksctl & kubectl installed properly,
               eksctl --version
               kubectl --version
       
