@@ -34,6 +34,7 @@
 ![image](https://user-images.githubusercontent.com/54719289/115592281-ed1b1280-a2ca-11eb-9d77-354b8dd35f6b.png)
 
 
+
         
 
 ![image](https://user-images.githubusercontent.com/54719289/115592117-c3fa8200-a2ca-11eb-9d0c-ac867d978537.png)
@@ -64,6 +65,10 @@
 # ec2 instances:
 ![image](https://user-images.githubusercontent.com/54719289/115600887-104abf80-a2d5-11eb-84fc-9bcc4a01b9cd.png)
 
+
+# spot request in ec2:
+
+![image](https://user-images.githubusercontent.com/54719289/115601245-759eb080-a2d5-11eb-9604-ea8bad1f5379.png)
 
 
 
