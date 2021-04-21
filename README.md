@@ -40,3 +40,15 @@
 
 ![image](https://user-images.githubusercontent.com/54719289/115592350-0623c380-a2cb-11eb-8f24-7cac77eb8e27.png)
 
+
+# eks cluster:
+
+       eksctl get cluster
+
+# eks nodeGroup:
+
+          eksctl get nodegroup --cluster EKS-cluster
+
+![image](https://user-images.githubusercontent.com/54719289/115593724-c5c54500-a2cc-11eb-98c7-34bf260b8299.png)
+
+
