@@ -61,6 +61,11 @@
 ![image](https://user-images.githubusercontent.com/54719289/115600037-25731e80-a2d4-11eb-942c-339272ed318d.png)
 
 
+# ec2 instances:
+![image](https://user-images.githubusercontent.com/54719289/115600887-104abf80-a2d5-11eb-84fc-9bcc4a01b9cd.png)
+
+
+
 
 
 
