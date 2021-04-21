@@ -5,7 +5,7 @@
               eksctl --version
               kubectl --version
       
-      create eks cluster with file
+  # create eks cluster with file
       
         $ cat clustercreation.yml
         apiVersion: eksctl.io/v1alpha5
@@ -23,7 +23,8 @@
               publicKeyName: Archu-acc
 
           
-
+            Command :  eksctl create cluster -f clustercreation.yml
+            
 # if its failed in kubeconfig, update using below command for the cluster,
 
 ![image](https://user-images.githubusercontent.com/54719289/115592281-ed1b1280-a2ca-11eb-9d77-354b8dd35f6b.png)
