@@ -76,7 +76,7 @@
 ![image](https://user-images.githubusercontent.com/54719289/115601706-04abc880-a2d6-11eb-83f9-a20b5a150c7d.png)
 
 
-# to delete the nodeGroup - ng-mixed:
+# Delete the nodeGroup - ng-mixed:
 
 eksctl delete nodegroup --config-file=clustercreation.yml --include='ng-mixed' --approve
 
