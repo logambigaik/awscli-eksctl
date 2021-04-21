@@ -57,6 +57,10 @@
 ![image](https://user-images.githubusercontent.com/54719289/115597438-2d7d8f00-a2d1-11eb-98ff-ea0daf0bc6c8.png)
 
 
+# $ eksctl create nodegroup --config-file=clustercreation.yml --include='ng-mixed'
+![image](https://user-images.githubusercontent.com/54719289/115600037-25731e80-a2d4-11eb-942c-339272ed318d.png)
+
+
 
 
 
