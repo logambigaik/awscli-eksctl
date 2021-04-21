@@ -69,6 +69,16 @@
 # spot request in ec2:
 
 ![image](https://user-images.githubusercontent.com/54719289/115601245-759eb080-a2d5-11eb-9604-ea8bad1f5379.png)
+![image](https://user-images.githubusercontent.com/54719289/115601422-b8608880-a2d5-11eb-8d3c-206ad3f9f5c6.png)
+
+# eksctl get nodegroup --cluster EKS-cluster
+
+![image](https://user-images.githubusercontent.com/54719289/115601706-04abc880-a2d6-11eb-83f9-a20b5a150c7d.png)
+
+
+# to delete the nodeGroup - ng-mixed:
+
+eksctl delete nodegroup --config-file=clustercreation.yml --include='ng-mixed' --approve
 
 
 
