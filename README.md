@@ -27,12 +27,14 @@
 
           
             
-# if its failed in kubeconfig, update using below command for the cluster,
+# if its failed in kubeconfig, update kubeconfig for the cluster with below command,
+
+      aws eks update-kubeconfig --name EKS-cluster  
 
 ![image](https://user-images.githubusercontent.com/54719289/115592281-ed1b1280-a2ca-11eb-9d77-354b8dd35f6b.png)
 
 
-        aws eks update-kubeconfig --name EKS-cluster  
+        
 
 ![image](https://user-images.githubusercontent.com/54719289/115592117-c3fa8200-a2ca-11eb-9d0c-ac867d978537.png)
 
