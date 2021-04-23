@@ -99,7 +99,7 @@ kubectl get nodes
 
 ### view cluster autoscaler logs
 
-```bash'''
+```bash```
 	kubectl -n kube-system logs deployment.apps/cluster-autoscaler | grep -A5 "Expanding Node Group"
 
 ![image](https://user-images.githubusercontent.com/54719289/115936872-526b3100-a48e-11eb-8dc4-d35bb4fffe44.png)
