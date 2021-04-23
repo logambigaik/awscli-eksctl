@@ -74,8 +74,6 @@ image](https://user-images.githubusercontent.com/54719289/115933344-9ce8af80-a48
 kubectl scale --replicas=4 deployment/test-autoscaler
 ```
 
-
-
 ### check pods
 
 ```bash
@@ -90,12 +88,27 @@ kubectl get nodes
 
 ![image](https://user-images.githubusercontent.com/54719289/115934096-2d73bf80-a488-11eb-9c03-1356b57d1d86.png)
 
+![image](https://user-images.githubusercontent.com/54719289/115935303-cf94a700-a48a-11eb-9808-86bd1b851be0.png)
+
+	kubectl scale --replicas=6 deployment/test-autoscaler
+	kubectl get pods
+	kubectl get nodes -l instance-type=spot
+
+
+![image](https://user-images.githubusercontent.com/54719289/115936414-12f01500-a48d-11eb-85db-9c936bf0c71d.png)
+
 ### view cluster autoscaler logs
 
 ```bash
 kubectl -n kube-system logs deployment.apps/cluster-autoscaler | grep -A5 "Expanding Node Group"
 
+
+
+
 kubectl -n kube-system logs deployment.apps/cluster-autoscaler | grep -A5 "removing node"
+
+![image](https://user-images.githubusercontent.com/54719289/115936583-8eea5d00-a48d-11eb-8823-9bf04a0cdda3.png)
+
 ```
 
 
