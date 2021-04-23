@@ -57,19 +57,24 @@ Step6 :View Cluster logs:
 	kubectl get nodes
 	kubectl get nodes -l instance-type=spot
 
-![image](https://user-images.githubusercontent.com/54719289/115933344-9ce8af80-a486-11eb-9a92-8a5020f15836.png)
+image](https://user-images.githubusercontent.com/54719289/115933344-9ce8af80-a486-11eb-9a92-8a5020f15836.png)
 
-### create a deployment of nginx
+
+
+	kubectl scale --replicas=3 deployment/test-autoscaler
+	kubectl get nodes
+	kubectl get nodes -l instance-type=spot
+	
+![image](https://user-images.githubusercontent.com/54719289/115933853-ae7e8700-a487-11eb-81c9-1e7900ae0475.png)
+
+
+### scale the deployment as 4 to check autoscaler
 
 ```bash
-kubectl apply -f nginx-deployment.yaml
+kubectl scale --replicas=4 deployment/test-autoscaler
 ```
 
-### scale the deployment
 
-```bash
-kubectl scale --replicas=3 deployment/test-autoscaler
-```
 
 ### check pods
 
@@ -82,6 +87,8 @@ kubectl get pods -o wide --watch
 ```bash
 kubectl get nodes
 ```
+
+![image](https://user-images.githubusercontent.com/54719289/115934096-2d73bf80-a488-11eb-9c03-1356b57d1d86.png)
 
 ### view cluster autoscaler logs
 
