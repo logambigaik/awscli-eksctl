@@ -53,32 +53,11 @@ Step6 :View Cluster logs:
 
 ## test the autoscaler
 
-	apiVersion: extensions/v1beta1
-	kind: Deployment
-	metadata:
-  		name: test-autoscaler
-	spec:
-  		replicas: 1
-  	template:
-    		metadata:
-      			labels:
-        			service: nginx
-        			app: nginx
-    	spec:
-      		containers:
-      			- image: nginx
-        	          name: test-autoscaler
-        	resources:
-          		limits:
-            			cpu: 300m
-            			memory: 512Mi
-          		requests:
-            			cpu: 300m
-            			memory: 512Mi
-      		nodeSelector:
-        		instance-type: spot
+	kubectl get pods
+	kubectl get nodes
+	kubectl get nodes -l instance-type=spot
 
-
+![image](https://user-images.githubusercontent.com/54719289/115933344-9ce8af80-a486-11eb-9a92-8a5020f15836.png)
 
 ### create a deployment of nginx
 
