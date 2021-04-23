@@ -1,0 +1,53 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: EKS-cluster
+  region: eu-west-2
+
+nodeGroups:
+  - name: scale-west2a
+    instanceType: t2.small
+    desiredCapacity: 1
+    maxSize: 3
+    availabilityZones: ['eu-west-2a']
+    iam:
+      withAddonPolicies:
+        autoScaler: true
+    labels:
+      nodegroup-type: stateful-west-2a
+      instance-type: onDemand
+    ssh:
+      publicKeyName: Archu-acc
+
+  - name: scale-west-2b
+    instanceType: t2.small
+    desiredCapacity: 1
+    maxSize: 3
+    availabilityZones: ['eu-west-2b']
+    iam:
+      withAddonPolicies:
+        autoScaler: true
+    labels:
+      nodegroup-type: stateful-west-2b
+      instance-type: onDemand
+    ssh:
+      publicKeyName: Archu-acc
+
+  - name: scale-spot
+    desiredCapacity: 1
+    maxSize: 3
+    instancesDistribution:
+      instanceTypes: ['t2.small','t3.small']
+      onDemandBaseCapacity: 0
+      onDemandPercentageAboveBaseCapacity: 0
+    availabilityZones: ['eu-west-2a','eu-west-2b']
+    iam:
+      withAddonPolicies:
+        autoscaler: true
+    labels:
+      nodegroup-type: stateless-workload
+      instance-type: spot
+    ssh:
+      publicKeyName: Archu-acc
+availabilityZones: ['eu-west-2a','eu-west-2b','eu-west-2c']
