@@ -28,7 +28,9 @@
        aws eks update-kubeconfig --name EKS-cluster
        kubectl get nodes
        kubectl get pods
-       
+       kubectl get all amazon-cloudwatch
+       kubectl get all -n amazon-cloudwatch
+
 ![image](https://user-images.githubusercontent.com/54719289/115970201-d7ab2000-a538-11eb-81ab-b1e27e6661e5.png)
 
 ![image](https://user-images.githubusercontent.com/54719289/115970228-f90c0c00-a538-11eb-8af7-eff60965e80d.png)
@@ -38,6 +40,8 @@
 ![image](https://user-images.githubusercontent.com/54719289/115970307-69b32880-a539-11eb-90e2-705ae4c04643.png)
 
 ![image](https://user-images.githubusercontent.com/54719289/115970324-851e3380-a539-11eb-9e9e-b301c3ddc536.png)
+
+![image](https://user-images.githubusercontent.com/54719289/115972904-26f94c80-a549-11eb-8a69-869d4207ef6a.png)
 
 
 # Check if this policy is attached  in all nodes
@@ -49,11 +53,17 @@
 runs as daemonset, means one per node
 
 ```bash
-curl https://raw.githubusercontent.com/aws-samples/amazon-cloudwatch-container-insights/master/k8s-yaml-templates/quickstart/cwagent-fluentd-quickstart.yaml | sed "s/{{cluster_name}}/EKS-course-cluster/;s/{{region_name}}/eu-west-2/" | kubectl apply -f 
+curl https://raw.githubusercontent.com/aws-samples/amazon-cloudwatch-container-insights/master/k8s-yaml-templates/quickstart/cwagent-fluentd-quickstart.yaml | sed "s/{{cluster_name}}/EKS-cluster/;s/{{region_name}}/eu-west-2/" | kubectl apply -f -
+
 
 
 ![image](https://user-images.githubusercontent.com/54719289/115970497-97e53800-a53a-11eb-9689-f98b6671c8d5.png)
 
+          kubectl get all  amazon-cloudwatch
+
+          kubectl get all -n amazon-cloudwatch
+      
+![image](https://user-images.githubusercontent.com/54719289/115973163-e00c5680-a54a-11eb-841f-df0b69dfe1ab.png)
 
 
   
