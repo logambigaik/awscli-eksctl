@@ -20,7 +20,7 @@
    
 
 
-## Cloudwatch Agent:
+## Cloudwatch Agent(cloudwatch metrics)   :
 
        eksctl create cluster  -f clustercreate-cloudwatch.yml
        eksctl get cluster
@@ -42,6 +42,16 @@
 # Check if this policy is attached  in all nodes
 
 ![image](https://user-images.githubusercontent.com/54719289/115970405-ffe74e80-a539-11eb-820f-ad78076f1e9a.png)
+
+
+## deploy the cloudwatch agent
+runs as daemonset, means one per node
+
+```bash
+curl https://raw.githubusercontent.com/aws-samples/amazon-cloudwatch-container-insights/master/k8s-yaml-templates/quickstart/cwagent-fluentd-quickstart.yaml | sed "s/{{cluster_name}}/EKS-course-cluster/;s/{{region_name}}/us-east-1/" | kubectl apply -f 
+
+
+![image](https://user-images.githubusercontent.com/54719289/115970497-97e53800-a53a-11eb-9689-f98b6671c8d5.png)
 
 
 
