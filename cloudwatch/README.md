@@ -39,9 +39,10 @@
 ![image](https://user-images.githubusercontent.com/54719289/115970324-851e3380-a539-11eb-9e9e-b301c3ddc536.png)
 
 
-# Attach this policy in all nodes
+# Check if this policy is attached  in all nodes
 
-       
+![image](https://user-images.githubusercontent.com/54719289/115970405-ffe74e80-a539-11eb-820f-ad78076f1e9a.png)
+
 
 
   
