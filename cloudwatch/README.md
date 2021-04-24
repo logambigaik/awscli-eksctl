@@ -22,5 +22,26 @@
 
 ## Cloudwatch Agent:
 
+       eksctl create cluster  -f clustercreate-cloudwatch.yml
+       eksctl get cluster
+       aws eks update-kubeconfig --name EKS-cluster
+       kubectl get nodes
+       kubectl get pods
+       
+![image](https://user-images.githubusercontent.com/54719289/115970201-d7ab2000-a538-11eb-81ab-b1e27e6661e5.png)
+
+![image](https://user-images.githubusercontent.com/54719289/115970228-f90c0c00-a538-11eb-8af7-eff60965e80d.png)
+
+![image](https://user-images.githubusercontent.com/54719289/115970237-09bc8200-a539-11eb-8938-4e654c1d302b.png)
+
+![image](https://user-images.githubusercontent.com/54719289/115970307-69b32880-a539-11eb-90e2-705ae4c04643.png)
+
+![image](https://user-images.githubusercontent.com/54719289/115970324-851e3380-a539-11eb-9e9e-b301c3ddc536.png)
+
+
+# Attach this policy in all nodes
+
+       
+
 
   
