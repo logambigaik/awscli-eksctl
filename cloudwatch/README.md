@@ -52,8 +52,13 @@
 ## deploy the cloudwatch agent
 runs as daemonset, means one per node
 
-```bash
-curl https://raw.githubusercontent.com/aws-samples/amazon-cloudwatch-container-insights/master/k8s-yaml-templates/quickstart/cwagent-fluentd-quickstart.yaml | sed "s/{{cluster_name}}/EKS-cluster/;s/{{region_name}}/eu-west-2/" | kubectl apply -f -
+         ClusterName='EKS-cluster'
+         LogRegion='us-west-2'
+         FluentBitHttpPort='2020'
+         FluentBitReadFromHead='Off'
+         [[ ${FluentBitReadFromHead} = 'On' ]] && FluentBitReadFromTail='Off'|| FluentBitReadFromTail='On'
+         [[ -z ${FluentBitHttpPort} ]] && FluentBitHttpServer='Off' || FluentBitHttpServer='On'
+         curl https://raw.githubusercontent.com/aws-samples/amazon-cloudwatch-container-insights/latest/k8s-deployment-manifest-templates/deployment-mode/daemonset/container-insights-monitoring/quickstart/cwagent-fluent-bit-quickstart.yaml | sed 's/{{cluster_name}}/'${ClusterName}'/;s/{{region_name}}/'${LogRegion}'/;s/{{http_server_toggle}}/"'${FluentBitHttpServer}'"/;s/{{http_server_port}}/"'${FluentBitHttpPort}'"/;s/{{read_from_head}}/"'${FluentBitReadFromHead}'"/;s/{{read_from_tail}}/"'${FluentBitReadFromTail}'"/' | kubectl apply -f - 
 
 
 
@@ -65,5 +70,26 @@ curl https://raw.githubusercontent.com/aws-samples/amazon-cloudwatch-container-i
       
 ![image](https://user-images.githubusercontent.com/54719289/115973163-e00c5680-a54a-11eb-841f-df0b69dfe1ab.png)
 
+![image](https://user-images.githubusercontent.com/54719289/115973803-b1dd4580-a54f-11eb-8d69-0eadb6b18679.png)
 
-  
+
+
+# Delete the cloudwatch agent:
+
+curl https://raw.githubusercontent.com/aws-samples/amazon-cloudwatch-container-insights/latest/k8s-deployment-manifest-templates/deployment-mode/daemonset/container-insights-monitoring/quickstart/cwagent-fluentd-quickstart.yaml | sed "s/{{cluster_name}}/EKS-course-cluster/;s/{{region_name}}/us-east-1/" | kubectl delete -f -
+
+
+
+
+## load generation
+
+```bash
+         kubectl run php-apache --image=k8s.gcr.io/hpa-example --requests=cpu=200m --limits=cpu=500m --expose --port=80
+```      
+
+```bash
+         kubectl run --generator=run-pod/v1 -it --rm load-generator --image=busybox /bin/sh
+
+Hit enter for command prompt
+
+while true; do wget -q -O- http://php-apache.default.svc.cluster.local; done
